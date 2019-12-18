@@ -34,15 +34,20 @@ void main() {
 void printUserClass() {
   User userOne = User('arifinoid', 25);
   User userTwo = User('rinaaadw', 25);
+  SuperUser userThree = SuperUser('Budi', 30);
 
   print(userOne.username);
   print(userTwo.username);
+  print(userThree.username);
+
+  userThree.superUser();
 }
 
 class User {
   String username;
   int age;
 
+  // constructor
   User(String username, int age) {
     this.username = username;
     this.age = age;
@@ -50,5 +55,14 @@ class User {
 
   void romance() {
     print('Move on succedd');
+  }
+}
+
+class SuperUser extends User {
+  // super constructor
+  SuperUser(String username, int age) : super(username, age);
+
+  void superUser() {
+    print('Hello from superuser');
   }
 }
