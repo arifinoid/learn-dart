@@ -40,7 +40,7 @@ void main() {
   // null aware operator
   var n = Num();
   int number;
-  
+
   // we can check null by this
   // if (n != null ){
   //   number = n.num;
@@ -57,6 +57,15 @@ void main() {
 
   // ternary operator
   int x = 100;
-  var result = x % 2 == 0 ? 'Even' :'Odd';
+  var result = x % 2 == 0 ? 'Even' : 'Odd';
   print(result);
+
+  var list = [1, 2, 3];
+  var list2 = [0, ...list];
+  assert(list2.length == 4);
+
+  // f the expression to the right of the spread operator might be null, you can avoid exceptions by using a null-aware spread operator (...?):
+  var list3;
+  var list4 = [0, ...?list3];
+  assert(list4.length == 1);
 }
